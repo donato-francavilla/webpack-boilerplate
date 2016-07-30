@@ -1,0 +1,41 @@
+{
+  "name": "webpackbp",
+  "version": "1.0.0",
+  "description": "A boilerplate for new projects with webpack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server",
+    "build": "webpack",
+    "deploy": "gh-pages -d build",
+    "stats": "webpack --profile --json > stats.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/donato-francavilla/webpack-boilerplate.git"
+  },
+  "keywords": [],
+  "author": "Donato Francavilla <donato.francavilla@gmail.com> (https://bitbucket.org/donatofrancavilla)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/donato-francavilla/webpack-boilerplate/issues"
+  },
+  "homepage": "https://github.com/donato-francavilla/webpack-boilerplate#readme",
+  "devDependencies": {
+    "clean-webpack-plugin": "^0.1.10",
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "gh-pages": "^0.11.0",
+    "html-webpack-plugin": "^2.21.0",
+    "purecss": "^0.6.0",
+    "purifycss-webpack-plugin": "^2.0.3",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1",
+    "webpack-merge": "^0.14.0",
+    "webpack-validator": "^2.2.1"
+  },
+  "dependencies": {
+    "angular": "^1.5.8"
+  }
+}
