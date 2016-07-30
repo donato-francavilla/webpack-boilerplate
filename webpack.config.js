@@ -8,6 +8,7 @@ const pkg               = require('./package.json');
 
 const PATHS = {
   app: path.join(__dirname, 'app'),
+  js : path.join(__dirname, 'app/js'),
   style: [
     path.join(__dirname, 'node_modules', 'purecss'),
     path.join(__dirname, 'app', 'style.css')
@@ -21,7 +22,7 @@ const common = {
   // convenient with more complex configurations.
   entry: {
     style: PATHS.style,
-    app: PATHS.app,
+    app: path.join(PATHS.js, 'index.js'),
     vendor: Object.keys(pkg.dependencies)
   },
   output: {
@@ -55,6 +56,8 @@ switch(process.env.npm_lifecycle_event) {
         'process.env.NODE_ENV',
         'production'
       ),
+      parts.ngTemplates(PATHS.app),
+      parts.es6babel(PATHS.app),
       parts.extractBundle(),
       parts.minify(),
       parts.extractCSS(PATHS.style),
@@ -68,6 +71,8 @@ switch(process.env.npm_lifecycle_event) {
         devtool: 'eval-source-map'
       },
       parts.clean(PATHS.dist),
+      parts.ngTemplates(PATHS.app),
+      parts.es6babel(PATHS.app),
       parts.setupCSS(PATHS.style),
       parts.devServer({
         // Customize host/port here if needed
