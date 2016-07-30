@@ -1,9 +1,9 @@
 //import angular from 'angular';
 import $ from 'jquery';
-require('angular');
-require('angular-mocks');
+import 'angular';
+import 'angular-mocks';
 
-require('./index.js');
+import './index.js';
 
 describe('My Test Test Suite', function() {
 
